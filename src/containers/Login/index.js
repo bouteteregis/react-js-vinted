@@ -19,13 +19,10 @@ const Login = ({ setUser }) => {
     try {
       event.preventDefault();
       setIsLoading(true);
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const response = await axios.post("https://localhost:3001/user/login", {
+        email: email,
+        password: password,
+      });
       if (response.data.token) {
         setUser(response.data.token);
         setIsLoading(false);

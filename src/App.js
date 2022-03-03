@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offers?priceMin=${
+        `https://localhost:3001/offers?priceMin=${
           fetchRangeValues[0]
         }&priceMax=${fetchRangeValues[1]}&sort=${
           sortPrice ? "price-desc" : "price-asc"

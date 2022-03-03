@@ -21,14 +21,11 @@ const CheckoutForm = ({ productName, totalPrice }) => {
 
       // console.log(stripeResponse);
 
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/payment",
-        {
-          amount: totalPrice,
-          title: productName,
-          token: stripeResponse.token.id,
-        }
-      );
+      const response = await axios.post("https://localhost:3001/payment", {
+        amount: totalPrice,
+        title: productName,
+        token: stripeResponse.token.id,
+      });
 
       if (response.data) {
         setIsPaid(true);

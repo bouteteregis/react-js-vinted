@@ -35,7 +35,7 @@ const Publish = ({ token }) => {
       formData.append("brand", selectedBrand);
 
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        "https://localhost:3001/offer/publish",
         formData,
         {
           headers: {
